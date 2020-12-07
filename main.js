@@ -3,6 +3,14 @@ const gameState = {
 };
 
 // Create your GameScene class below:
+class StartScene extends Phaser.scene {
+  constructor(){
+    super({key:'StartScene'})
+  }
+  create(){
+    this.add.text(100,100, 'Welcome to the game')
+  }
+}
 class GameScene extends Phaser.Scene {
   constructor(){
     super ({key:'GameScene'})
@@ -88,7 +96,7 @@ const config = {
 			enableBody: true,
 		}
 	},
-	scene: [GameScene] 
+	scene: [StartScene,GameScene] 
 };
 
 const game = new Phaser.Game(config);
